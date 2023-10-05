@@ -1,0 +1,29 @@
+<div class="zone-container">
+  <div class="table">
+    <div class="table-header">
+      <div class="table-column">ID</div>
+      <div class="table-column">Name</div>
+      <div class="table-column">Points</div>
+      <div class="table-column">Action</div>
+    </div>
+    <div class="table-body">
+      <ng-container *ngIf="zones$ | async as zones">
+        <ng-container *ngIf="zones.length; else noItems">
+          <div class="table-row" *ngFor="let zone of zones" (click)="navigateToMap(zone)">
+            <div class="table-column">{{ zone.id }}</div>
+            <div class="table-column">{{ zone.name }}</div>
+            <div class="table-column">{{ zone.points }}</div>
+            <div class="table-column">
+              <img src="assets/icons/delete.svg" alt="Delete" height="22" width="22" (click)="$event.stopPropagation(); removeZone(zone, zones)">
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-template #noItems>
+          <div class="no-results">No Items To Show</div>
+        </ng-template>
+
+      </ng-container>
+    </div>
+  </div>
+</div>

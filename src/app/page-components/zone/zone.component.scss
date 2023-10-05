@@ -1,0 +1,43 @@
+.zone-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+
+  .table {
+    width: 80%;
+
+    .table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .table-body {
+      .table-row {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: center;
+        border: 1px solid lightgray;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .table-column {
+      padding: 20px;
+      flex: 1;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 20px;
+  }
+}
